@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,10 +14,32 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('Dameli\'s CV and Portfolio',
+            style: TextStyle(color: Colors.black)
+            ,
+          ),
+          backgroundColor: Colors.yellow,
         ),
-        body: Center(
-          child: Text('Hello World'),
+        body: Scaffold(
+          backgroundColor: Colors.orange,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('images/profile.png'),
+                  radius: 65,
+                ),
+                Card(child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.album),
+                    Text("Hello",),
+                  ],
+                ), color: Colors.amberAccent, margin: EdgeInsets.all(10),)
+              ]
+            ),
+          ),
         ),
       ),
     );
